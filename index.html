@@ -12,21 +12,58 @@
     <div class="contentBox box1" data-boxName="Microsoft Animations">
     <div class="divBox A-Chev" data-animTitle="Slide & Fade">
         <i class="fas fa-chevron-down"></i>
+        <span>Various apps: Used for entrances & exits of popups, icons, and more.</span>
     </div>
 
     <div class="divBox C-WinBtn" data-animTitle="Zoom and fade">
         <i class="fab fa-microsoft fcu2"></i>
+        <span>Windows 11: Shown when hovering on & off of an icon on the taskbar.</span>
     </div>
 
     <div class="divBox D-ClickZoom" data-animTitle="(Click) Zoom & Color">
         <i class="fab fa-microsoft fcu3"></i>
+        <span>Windows 10X & 11: Shown when clicking on an icon on the taskbar.</span>
+    </div>
+
+    <div class="F-OpenClose divBox" id="foc" onclick="itemF()" data-animTitle="(Click) Taskbar - Icon Indicator">
+        <i class="fab fa-microsoft fcu4" onclick="itemF()"><div class="tbi" id="tbi"></div></i>
+        <span>Windows 11: Shown when showing and hiding an app from the taskbar, or app's Window controls.</span>
+    </div>
+
+    <div class="divBox E-TaskBar1" data-animTitle="(Hover) Taskbar - Icons">
+        <div class="etbBack">
+            <div class="tbIcon tbi1"></div>
+            <div class="tbIcon tbi2"></div>
+            <div class="tbIcon tbi3"></div>
+            <div class="tbIcon tbi4"></div>
+            <div class="tbIcon tbi5"></div>
+        </div>
+        <span>Windows 10X: Demo of the (scrapped) taskbar auto-hide feature.</span>
     </div>
     </div>
 
     <div class="contentBox box2" data-boxName="Custom animations">
         <div class="divBox B-Chev" data-animTitle="(Hover) Rotate">
             <i class="fas fa-chevron-up fcu1"></i>
+            <span>Shown when clicking/hovering on/off of a box with expandable content. Used when interacted with the element to show expanding or collapsing.</span>
         </div>
-        </div>
+    </div>
+
+    <script>
+        function itemF() {
+            var foc = document.getElementById("foc");
+        var tbi = document.getElementById("tbi");
+
+        if (foc.style.backgroundColor === "transparent") {
+            foc.style.backgroundColor = "rgba(255, 255, 255, .2)";
+            foc.style.borderTop = "1px solid rgba(255, 255, 255, .1";
+            tbi.style.transform = "scale(1)"
+        } else {
+            foc.style.backgroundColor = "transparent";
+            foc.style.borderTop = "1px solid transparent";
+            tbi.style.transform = "scale(0)"
+        }
+        }
+    </script>
 </body>
 </html>

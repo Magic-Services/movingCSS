@@ -4,23 +4,42 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     color: white;
     background: black;
-    transform: scale(1.5);
+    transform: scale(1.3);
     overflow: hidden;
+}
+
+span{
+    position: absolute;
+    width: 25ch;
+    top: 120px;
+    color: white;
+    font: 400 11px 'Segoe UI Variable Small';
+    background-color: gray;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transform: scale(0);
+    transition: transform .2s;
+    transform-origin: top;
+}
+
+.divBox:hover span{
+    transform: scale(1);
 }
 
 .contentBox{
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 80px; 
+    gap: 90px; 
     border: 3px solid white;
-    padding: 80px 70px;
+    padding: 80px 70px 100px 70px;
     border-radius: 5px;
     min-height: 80px;
     min-width: 150px;
@@ -36,11 +55,18 @@ body{
     left: 50%;
     width: max-content;
     transform: translateX(-50%);
-    font: 800 25px 'Segoe UI Variable Display'
+    font: 800 25px 'Segoe UI Variable Display';
 }
 
 .divBox{
     position: relative;
+    height: 100px;
+    min-width: 100px;
+    max-height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .divBox::before{
@@ -61,7 +87,7 @@ body{
 
 .fas,
 .fab{
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .fcu1{
@@ -77,7 +103,7 @@ body{
 }
 
 .C-WinBtn{
-    width: 66px;
+    min-width: 66px;
     height: 65px;
     display: flex;
     align-items: center;
@@ -94,8 +120,8 @@ body{
     animation: startEntr 1.5s infinite ease;
 }
 
-.fcu2{
-    font-size: 40px;
+.fcu2, .fcu4{
+    font-size: 35px;
     background: linear-gradient(to bottom right, hsl(195, 100%, 75%), hsl(205, 98%, 49%));
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,7 +129,7 @@ body{
 }
 
 .D-ClickZoom{
-    width: 65px;
+    min-width: 65px;
     height: 65px;
     border-radius: 4px;
     display: flex;
@@ -111,6 +137,7 @@ body{
     justify-content: center;
     border-top: 1px solid transparent;
     color: skyblue;
+    margin-right: 30px;
     transition: background-color .2s, border-top .2s, color .2s;
 }
 
@@ -130,6 +157,90 @@ body{
 .fcu3{
     font-size: 40px;
     transition: font-size .1s;
+}
+
+.E-TaskBar1{
+    display: flex;
+    align-items: flex-end;
+}
+
+.etbBack{
+    width: 300px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: height .2s;
+}
+
+.etbBack:hover{
+    height: 50px;
+}
+
+.etbBack:hover::after{
+    opacity: 0;
+}
+
+.etbBack:hover .tbIcon{
+    opacity: 1;
+}
+
+.etbBack::after{
+    content: "";
+    width: 20px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity .2s;
+}
+
+.tbIcon{
+    width: 35px;
+    height: 35px;
+    background-color: gray;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.F-OpenClose{
+    display: none;
+    min-width: 65px;
+    height: 65px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid transparent;
+    transition: background-color .2s, border-top .2s, color .2s;
+    background-color: transparent;
+}
+
+.fcu4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbi{
+    content: "";
+    width: 20px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 3px;
+    transform: scale(0);
+    transition: .2s;
 }
 
 @keyframes downChev {
