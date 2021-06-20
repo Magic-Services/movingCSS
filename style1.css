@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: black;
+    transform: scale(1.5);
+    overflow: hidden;
+}
+
+.contentBox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; 
+    border: 3px solid white;
+    padding: 80px 70px;
+    border-radius: 5px;
+    min-height: 80px;
+    min-width: 150px;
+}
+
+.contentBox::before{
+    content: attr(data-boxName);
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: max-content;
+    transform: translateX(-50%);
+    font: 800 25px 'Segoe UI Variable Display'
+}
+
+.divBox{
+    position: relative;
+}
+
+.divBox::before{
+    content: attr(data-animTitle);
+    position: absolute;
+    background:hsl(195, 100%, 75%);
+    padding: 5px 10px;
+    width: max-content;
+    height: fit-content;
+    border-radius: 3px;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font: 400 12px 'Segoe UI Variable Small';
+}
+
+.fas,
+.fab{
+    font-size: 50px;
+}
+
+.fcu1{
+    transition: transform .4s;
+}
+
+.fcu1:hover{
+    transform: rotate(180deg);
+}
+
+.fa-chevron-down{
+    animation: downChev 3s infinite ease;
+}
+
+.C-WinBtn{
+    width: 66px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.C-WinBtn::after{
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    animation: startEntr 1.5s infinite ease;
+}
+
+.fcu2{
+    font-size: 40px;
+    background: linear-gradient(to bottom right, hsl(195, 100%, 75%), hsl(205, 98%, 49%));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.D-ClickZoom{
+    width: 65px;
+    height: 65px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid transparent;
+    color: skyblue;
+    transition: background-color .2s, border-top .2s, color .2s;
+}
+
+.D-ClickZoom:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.D-ClickZoom:active{
+    color: rgb(58, 114, 218);
+}
+
+.D-ClickZoom:active .fcu3{
+    font-size: 30px;
+}
+
+.fcu3{
+    font-size: 40px;
+    transition: font-size .1s;
+}
+
+@keyframes downChev {
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    25%{
+        transform: translateY(25px);
+        opacity: 1;
+    }
+
+    75%{
+        transform: translateY(25px);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+@keyframes startEntr {
+    0%{
+        background: transparent;
+        border-top: 1px solid transparent;
+        transform: scale(1.1);
+    }
+
+    25%{
+        background: rgba(255, 255, 255, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+    }
+
+    75%{
+        background: rgba(255, 255, 255, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+    }
+
+    100%{
+        background: transparent;
+        border-top: 1px solid transparent;
+        transform: scale(.9);
+    }
+}
+
+@keyframes startEInner {
+    0%{
+        background: linear-gradient(to bottom right, hsl(195, 100%, 75%), hsl(205, 98%, 49%));
+        background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    }
+
+    25%{
+        background: hsl(198, 97%, 70%);
+        background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    }
+
+    75%{
+        background: hsl(198, 97%, 70%);
+        background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    }
+
+    100%{
+        background: linear-gradient(to bottom right, hsl(195, 100%, 75%), hsl(205, 98%, 49%));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
